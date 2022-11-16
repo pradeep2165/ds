@@ -1,25 +1,18 @@
-const a = function(){
-    console.log(this);
-  
-    const b = {
-      func1: function(){
-        console.log(this);
-      }  
+const b = {
+    name:"Vivek",
+    f: function(){
+      var self = this;
+      console.log(this.name);
+      (()=>{
+        console.log(this.name);
+        console.log(self.name);
+      })();
     }
-  
-    const c = {
-      func2: ()=>{
-        console.log(this);
-      }
-    }
-  
-    b.func1();
-    c.func2();
   }
-  
-  a();
+  b.f();
 
-//   result
-//   global/window object
-//   object "b"
-//   global/window object
+  //result
+//"Vivek"
+// undefined
+// "Vivek" 
+  //Only in the IIFE inside the function f, this keyword refers to the global/window object
