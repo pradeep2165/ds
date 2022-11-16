@@ -1,11 +1,18 @@
-// What is the purpose of the following JavaScript code?
-var scope = "global scope"
-function check(){
-    // var scope = "local scope";
-    function f(){
-        return scope
-    }
-    return f;
-}
+function func1() {
+  setTimeout(() => {
+    console.log(x);
+    console.log(y);
+  }, 3000);
 
-console.log(check()) //local scope
+  var x = 2;
+  let y = 12;
+}
+func1();
+// result
+// 2
+// 12
+console.log(func1());
+// result
+// undefined
+// 2
+// 12
