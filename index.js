@@ -1,15 +1,19 @@
-var x = 23;
+let hero = {
+    powerLevel: 99,
+    getPower(){
+      return this.powerLevel;
+    }
+  }
 
-(function(){
-  var x = 43;
-  (function random(){
-    // x is hoisted
-    x++; // x is not a number since it is not initialized yet
-    console.log(x); // NaN
-    var x = 21; // Initialization of x
-  })();
-})(); 
+  
+  let getPower = hero.getPower;
+  
+  let hero2 = {powerLevel:42};
+  console.log(getPower());
+  console.log(getPower.apply(hero2));
 
-// retult 
-// NaN
-//random() function has functional scope since x is declared and hoisted in the functional scope.
+
+//   result
+//   Reason - The first output is undefined since when the function is invoked, it is invoked referencing the global object:
+
+// window.getPower() = getPower();
