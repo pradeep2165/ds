@@ -1,15 +1,13 @@
-const findVowels = str => {
-    let count = 0
-    const vowels = ['a', 'e', 'i', 'o', 'u']
-    for(let char of str.toLowerCase()) {
-      if(vowels.includes(char)) {
-        count++
-      }
-    }
-    return count
-  }
+let obj = { id: "1", name: "user22", age: "26", work: "programmer" };
 
-  console.log(findVowels("pradeep"));
+//Method 1: Convert the keys to Array using - Object.keys()
+console.log(Object.keys(obj));
+// ["id", "name", "age", "work"]
 
-  //find vowel charactor
-  
+// Method 2 Converts the Values to Array using - Object.values()
+console.log(Object.values(obj));
+// ["1", "user22r", "26", "programmer"]
+
+// Method 3 Converts both keys and values using - Object.entries()
+console.log(Object.entries(obj));
+//[["id", "1"],["name", "user22"],["age", "26"],["work", “programmer"]]
