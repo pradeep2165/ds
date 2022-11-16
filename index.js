@@ -1,13 +1,35 @@
-let obj = { id: "1", name: "user22", age: "26", work: "programmer" };
+const b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-//Method 1: Convert the keys to Array using - Object.keys()
-console.log(Object.keys(obj));
-// ["id", "name", "age", "work"]
+for (let i = 0; i < 10; i++) {
+  setTimeout(() => console.log(b[i]), 1000);
+}
 
-// Method 2 Converts the Values to Array using - Object.values()
-console.log(Object.values(obj));
-// ["1", "user22r", "26", "programmer"]
+for (var i = 0; i < 10; i++) {
+  setTimeout(() => console.log(b[i]), 1000);
+}
 
-// Method 3 Converts both keys and values using - Object.entries()
-console.log(Object.entries(obj));
-//[["id", "1"],["name", "user22"],["age", "26"],["work", “programmer"]]
+//since let has block scope, so it is fetch one by one
+// result 
+// 1
+// 2
+// 3
+// 4
+// 5
+// 6
+// 7
+// 8
+// 9
+// 10
+
+//since var has global/local scope, so it is increment first and then check. that is why i = 10 and b's 10 th index is undefined
+//result
+// undefined
+// undefined
+// undefined
+// undefined
+// undefined
+// undefined
+// undefined
+// undefined
+// undefined
+// undefined
