@@ -1,11 +1,14 @@
-function func2(){
-    for(var i = 0; i < 3; i++){
-      setTimeout(()=> console.log(i),2000);
-  }
-  }
-  func2();
-//   retult
+(function(){
+    setTimeout(()=> console.log(1),2000);
+    console.log(2);
+    setTimeout(()=> console.log(3),0);
+    console.log(4);
+  })();
+
+// result 
+// 2
+// 4
 // 3
-// 3
-// 3
-// Outputs 3, three times since variable declared with var keyword does not have block scope. Also, inside the for loop, the variable i is incremented first and then checked.
+// 1 // After two seconds
+//Even though the second timeout function has a waiting time of zero seconds, the javascript engine always evaluates the setTimeout function using the Web API, and therefore, the complete function executes before the setTimeout function can execute.
+
