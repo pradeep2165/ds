@@ -1,19 +1,25 @@
-let hero = {
-    powerLevel: 99,
-    getPower(){
-      return this.powerLevel;
+const a = function(){
+    console.log(this);
+  
+    const b = {
+      func1: function(){
+        console.log(this);
+      }  
     }
+  
+    const c = {
+      func2: ()=>{
+        console.log(this);
+      }
+    }
+  
+    b.func1();
+    c.func2();
   }
-
   
-  let getPower = hero.getPower;
-  
-  let hero2 = {powerLevel:42};
-  console.log(getPower());
-  console.log(getPower.apply(hero2));
-
+  a();
 
 //   result
-//   Reason - The first output is undefined since when the function is invoked, it is invoked referencing the global object:
-
-// window.getPower() = getPower();
+//   global/window object
+//   object "b"
+//   global/window object
