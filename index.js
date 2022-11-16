@@ -1,18 +1,11 @@
-function func1() {
-  setTimeout(() => {
-    console.log(x);
-    console.log(y);
-  }, 3000);
-
-  var x = 2;
-  let y = 12;
-}
-func1();
-// result
-// 2
-// 12
-console.log(func1());
-// result
-// undefined
-// 2
-// 12
+function func2(){
+    for(var i = 0; i < 3; i++){
+      setTimeout(()=> console.log(i),2000);
+  }
+  }
+  func2();
+//   retult
+// 3
+// 3
+// 3
+// Outputs 3, three times since variable declared with var keyword does not have block scope. Also, inside the for loop, the variable i is incremented first and then checked.
