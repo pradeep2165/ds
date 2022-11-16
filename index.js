@@ -1,18 +1,17 @@
-let x = {}, y={name:"Ronny"}, z = {name: "John"};
+function func(){
+    console.log("1" + 1);
+    console.log("A" - 1);
+    console.log(2 + "-2" + "2")
+    console.log(2 + + "-2" + "2")
+    console.log("world" - "world" + 78)
+    console.log("world" + 78)
+}
+func();
 
-x[y] = {name:"Vivan"};
-x[z] = {name:"Akki"}
-console.log(x[z]);
-
-
-// Code 1 - Output will be {name: “Akki”}.
-
-// Adding objects as properties of another object should be done carefully.
-
-// Writing x[y] = {name:”Vivek”} , is same as writing x[‘object Object’] = {name:”Vivek”} ,
-
-// While setting a property of an object, javascript coerces the parameter into a string.
-
-// Therefore, since y is an object, it will be converted to ‘object Object’.
-
-// Both x[y] and x[z] are referencing the same property.
+// result
+// 11
+// NaN
+// 2-22
+// 02
+// NaN
+// world78
