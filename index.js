@@ -1,17 +1,15 @@
-function func(){
-    console.log("1" + 1);
-    console.log("A" - 1);
-    console.log(2 + "-2" + "2")
-    console.log(2 + + "-2" + "2")
-    console.log("world" - "world" + 78)
-    console.log("world" + 78)
-}
-func();
+var x = 23;
 
-// result
-// 11
+(function(){
+  var x = 43;
+  (function random(){
+    // x is hoisted
+    x++; // x is not a number since it is not initialized yet
+    console.log(x); // NaN
+    var x = 21; // Initialization of x
+  })();
+})(); 
+
+// retult 
 // NaN
-// 2-22
-// 02
-// NaN
-// world78
+//random() function has functional scope since x is declared and hoisted in the functional scope.
