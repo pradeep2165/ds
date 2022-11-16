@@ -1,8 +1,15 @@
-function isAnagram(one, two){
-    let a = one.toLowerCase().split("").sort().join("");
-    let b = two.toLowerCase().split("").sort().join("");
-    return a===b;
-}
-console.log(isAnagram('pradeep', 'eepdarp'));
+const findVowels = str => {
+    let count = 0
+    const vowels = ['a', 'e', 'i', 'o', 'u']
+    for(let char of str.toLowerCase()) {
+      if(vowels.includes(char)) {
+        count++
+      }
+    }
+    return count
+  }
 
-//anagram program
+  console.log(findVowels("pradeep"));
+
+  //find vowel charactor
+  
