@@ -1,11 +1,10 @@
-function randfunc(){
-    for(var i = 0; i< 2; i++){
-        (function(i){
-            setTimeout(() => {
-                console.log(i)
-            }, 1000);
-        })(i)
+function rotateRight(arr,rotations){
+    if(rotations == 0) return arr;
+    for(let i = 0; i < rotations;i++){
+      let element = arr.pop();
+      arr.unshift(element);
     }
-}
-
-randfunc();
+    return arr;
+  }
+  console.log(rotateRight([2, 3, 4, 5, 7], 3)); // Return [4,5,7,2,3]
+  console.log(rotateRight([44, 1, 22, 111], 5)); // Returns [111,44,1,22] 
