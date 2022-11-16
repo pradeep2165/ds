@@ -1,14 +1,18 @@
-(function(){
-    setTimeout(()=> console.log(1),2000);
-    console.log(2);
-    setTimeout(()=> console.log(3),0);
-    console.log(4);
-  })();
+let x = {}, y={name:"Ronny"}, z = {name: "John"};
 
-// result 
-// 2
-// 4
-// 3
-// 1 // After two seconds
-//Even though the second timeout function has a waiting time of zero seconds, the javascript engine always evaluates the setTimeout function using the Web API, and therefore, the complete function executes before the setTimeout function can execute.
+x[y] = {name:"Vivan"};
+x[z] = {name:"Akki"}
+console.log(x[z]);
 
+
+// Code 1 - Output will be {name: “Akki”}.
+
+// Adding objects as properties of another object should be done carefully.
+
+// Writing x[y] = {name:”Vivek”} , is same as writing x[‘object Object’] = {name:”Vivek”} ,
+
+// While setting a property of an object, javascript coerces the parameter into a string.
+
+// Therefore, since y is an object, it will be converted to ‘object Object’.
+
+// Both x[y] and x[z] are referencing the same property.
