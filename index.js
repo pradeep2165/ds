@@ -1,5 +1,11 @@
-function toCelsius(fahrenheit) {
-    return (5/9) * (fahrenheit-32);
-  }
+function summation(n){
+    let sum = 0;
+    for(let i= 0; i <= n; i++){
+        sum += i;
+    }
+    return sum;
+}
 
-  console.log(toCelsius(-40))
+console.log(summation(6));
+
+//1,2,3,4,5,6 = 21
