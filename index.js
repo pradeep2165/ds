@@ -1,16 +1,12 @@
-function cartisanProduct(arr1, arr2){
-    const result =[];
-    for(let i = 0; i< arr1.length; i++){
-        for(let j = 0; j < arr2.length; j++){
-            result.push([arr1[i], arr2[j]])
-        }
+function climbingStaircase(n){
+    const noOfWays = [1, 2];
+    for(let i=2; i <= n; i++){
+        noOfWays[i] = noOfWays[i-1] + noOfWays[i-2];
     }
-    return result;
+    return noOfWays[n-1]
 }
 
-const arr1 = [1,2];
-const arr2 = [3,4,5];
+console.log(climbingStaircase(4));
 
-console.log(cartisanProduct(arr1, arr2));
 
-//cartisan product
+//climbingStaircase algo
