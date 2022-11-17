@@ -1,22 +1,27 @@
-function quickSort(arr){
-    if(arr.length <2){
-        return arr;
+function mergeSort(arr){
+    if(arr.length < 2){
+        return arr
     }
-    let pivot  = arr[arr.length -1];
-    let left =[];
-    let right =[];
-    for(let i = 0; i < arr.length - 1; i++){
-        if(arr[i] < pivot){
-            left.push(arr[i]);
+    const mid = Math.floor(arr.length/2);
+    const leftArr = arr.slice(0, mid);
+    const rightArr = arr.slice(mid);
+    return merge(mergeSort(leftArr), mergeSort(rightArr));
+}
+function merge(leftArr, rightArr){
+    const sortArr = [];
+    while(leftArr.length && rightArr.length){
+        if(leftArr[0] <= rightArr[0]){
+            sortArr.push(leftArr.shift());
         }else{
-            right.push(arr[i])
+            sortArr.push(rightArr.shift()) 
         }
     }
-    return [...quickSort(left), pivot, ...quickSort(right)]
+    return [...sortArr, ...leftArr, ...rightArr]
 }
 
 const arr = [8,20,-2,4,-6]
-console.log(quickSort(arr));
+console.log(mergeSort(arr));
 
-//worst case o(n^2);
-//avg case o(nlogn);
+//big-0 o(nlogn)
+
+//mergesort algo
