@@ -1,23 +1,22 @@
-function recursiveBinarySearch(arr, target){
-    return search(arr, target, 0, arr.length-1);
-}
-function search(arr, target, leftIndex, rightIndex){
-    if(leftIndex > rightIndex){
-        return -1
+function bubbleSort(arr){
+    let swapped;
+do{
+    swapped =false
+    for(let i=0; i < arr.length-1; i++){
+        if(arr[i] > arr[i+1]){
+            let temp = arr[i];
+            arr[i] = arr[i+1];
+            arr[i+1] = temp
+            swapped = true
+        }
     }
-    let middleIndex = Math.floor((leftIndex + rightIndex)/2);
-    if(target === arr[middleIndex]){
-        return middleIndex;
-    }
-    if(target < arr[middleIndex]){
-        return search(arr, target, leftIndex, middleIndex - 1)
-    }else{
-        return search(arr, target, middleIndex + 1, rightIndex)
-        
-    }
+
+}while(swapped)
+return arr;
 }
 
-console.log(recursiveBinarySearch([-5,2,4,6,10], 6))
+const arr  = [8,-1, 20,-2,4,-6]
 
-//big-o o(log(n))
-//recoursive binary search algo
+console.log(bubbleSort(arr))
+
+//big-0 = o(n^2);
