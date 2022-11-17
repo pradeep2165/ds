@@ -1,12 +1,15 @@
-function climbingStaircase(n){
-    const noOfWays = [1, 2];
-    for(let i=2; i <= n; i++){
-        noOfWays[i] = noOfWays[i-1] + noOfWays[i-2];
+function towerOfHanoi(n, fromRod, toRod, usingRod){
+    if(n ===1){
+        console.log(`move disk 1 from ${fromRod} to ${toRod}`)
+        return
     }
-    return noOfWays[n-1]
+    towerOfHanoi(n-1, fromRod, usingRod, toRod)
+    console.log(`move disk ${n} from ${fromRod} to ${toRod}`)
+    towerOfHanoi(n-1, usingRod, toRod, fromRod)
+    
 }
 
-console.log(climbingStaircase(4));
+towerOfHanoi(7, "A", "C", "B")
 
 
-//climbingStaircase algo
+//big-o 2^n
