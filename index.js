@@ -1,11 +1,10 @@
-function summation(n){
-    let sum = 0;
-    for(let i= 0; i <= n; i++){
-        sum += i;
+function linearSearch(arr, target){
+    for(let i=0; i<arr.length; i++){
+        if(arr[i]==target)return i
     }
-    return sum;
+    return -1;
 }
 
-console.log(summation(6));
+console.log(linearSearch([8,3,2,4,5,6], 6));
 
-//1,2,3,4,5,6 = 21
+//linear search algo
